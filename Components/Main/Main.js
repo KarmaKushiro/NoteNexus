@@ -9,8 +9,8 @@ import { getAllUsers } from "../../Services/Users.js";
 
 //Componets
 import MainList from "./MainList.js";
-import Header from "./Header.js";
-import Survey from "./Survey.js";
+import Header from "../Header/Header.js";
+import Survey from "../Survey/Survey.js";
 
 const Main = () => {
   const [users, setUsers] = useState([]);
