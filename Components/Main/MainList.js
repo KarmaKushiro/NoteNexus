@@ -1,5 +1,6 @@
 import { html } from "https://unpkg.com/htm/preact/standalone.module.js";
 
+//this component is how MainList will be displayes on the weboage
 const MainList = ({ users }) => {
   return html`
     <div>

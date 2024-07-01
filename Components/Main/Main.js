@@ -6,20 +6,34 @@ import {
 
 //Services
 import { getAllUsers } from "../../Services/Users.js";
+import { getAllSongs } from "../../Services/songModel.js";
+import { getAllGenres } from "../../Services/genreModel.js";
 
 //Componets
 import MainList from "./MainList.js";
 import Header from "../Header/Header.js";
 import Survey from "../Survey/Survey.js";
+import SongsList from "../SongsList.js";
+import GenresList from "../GenresList.js";
+
 
 const Main = () => {
+  //expand useEffect to include songs amnd genres and do it asyncly
   const [users, setUsers] = useState([]);
+  const [songs, setSongs] = useState([]);
+  const [genres, setGenres] = useState([]);
 
-  //gets the credits info
+  //gets data assynchronously for usersData songsData and genresData
   useEffect(() => {
-    getAllUsers().then((users) => {
-      setUsers(users);
-    });
+    const fetchData = async () => {
+      const [usersData, songsData, genresData] = await Promise.all([getAllUsers(),getAllSongs(),getAllGenres()]);
+
+      setUsers(usersData);
+      setSongs(songsData);
+      setGenres(genresData);
+    };
+
+    fetchData();
   }, []);
 
   //creates an alert with the users response to the form
@@ -66,6 +80,13 @@ const Main = () => {
 
       <!--This is the website credits-->
       <${MainList} users=${users} />
+
+      <h2> below is an example usage of the componets GenresList and SongsList </h2>
+      <h3>Songs</h3>
+      <${SongsList} songs=${songs} />
+
+      <h3>Genres</h3>
+      <${GenresList} genres=${genres} />
     </div>
   `;
 };
