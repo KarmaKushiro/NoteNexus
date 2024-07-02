@@ -1,6 +1,6 @@
 # Changelog
 
-## [0.2.0] - 07-01-2024 - feature 4
+## [0.1.5] - 07-01-2024 - feature 4 (JP's contributions will be added later)
 ### Added
 - Created `SongModel.js` and `GenreModel.js` for separate Parse queries.
 - Updated `Main.js` get async data for songs, genres, and users.
