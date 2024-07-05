@@ -4,6 +4,7 @@ import React, { useEffect, useState} from 'react';
 import { getAllUsers } from "../../Services/Users";
 
 //Componets
+import "./Main.css";
 import MainList from "./MainList";
 import Header from "../Header/Header";
 import Survey from "../Survey/Survey";
@@ -13,9 +14,9 @@ const Main = () => {
 
   //gets the credits info
   useEffect(() => {
-    getAllUsers().then((users) => {
-      setUsers(users);
-    });
+    getAllUsers()
+      .then(data => setUsers(data))
+      .catch(error => console.error('Error fetching users:', error));
   }, []);
 
   //creates an alert with the users response to the form
@@ -30,27 +31,11 @@ const Main = () => {
       return;
     }
     const finalGenre = favGenre === 'Other' ? formData.get('custom_genre') : favGenre;
-    alert(`${name}'s Favorite Music Genre Is: ${finalGenre}`);
+    alert(`${name}'s Favorite Music Genre Is "${finalGenre}"`);
   };
 
   return (
     <div>
-      <style>
-        {`
-          @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap");
-          .centered-title {
-            text-align: center;
-            font-family: "Nunito", sans-serif;
-            font-size: 50px;
-            margin-top: 10px;
-          }
-          body {
-            background: #e3e3e3;
-          }
-        `}
-      </style>
-
-      {/*this is the unworking nav bar at the top of the screen */}
       <Header />
 
       <h1 className="centered-title">NoteNexus</h1>

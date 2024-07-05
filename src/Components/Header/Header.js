@@ -1,4 +1,5 @@
 import React from 'react';
+import './Header.css';
 
 //This file makes the header bar at the top of the screen and it adjusts depending on the size of the screen
 const Header = () => {

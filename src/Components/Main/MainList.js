@@ -4,16 +4,22 @@ const MainList = ({ users }) => {
   return (
     <div>
       <hr />
-      Website Credits:
+      <p>Website Credits:</p>
       <ul>
-        {users.map(
-          (user, index) => (
-          <li key={index}>{user.name}
-          </li>
-        ))}
+        {users.length > 0 ? (
+          users.map((user) => (
+            <li key={user.id}>
+              {user.firstName} {user.lastName} | Contact:
+              <a href={`mailto:${user.email}`}>{user.email}</a>
+            </li>
+          ))
+        ) : (
+          <p>Error: Credentials cannot load.</p>
+        )}
       </ul>
     </div>
   );
 };
 
 export default MainList;
+
