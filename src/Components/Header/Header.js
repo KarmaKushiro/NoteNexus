@@ -9,9 +9,9 @@ const Header = () => {
       <ul class="top_nav_bar">
         <li class="left"><a href="">Home</a></li>
         <li class="right"><a href="">About</a></li>
-        <li class="right large_only"><a href="">Option 1</a></li>
+        {/*<li class="right large_only"><a href="">Option 1</a></li>
         <li class="right large_only"><a href="">Option 2</a></li>
-        <li class="right large_only"><a href="">Option 3</a></li>
+        <li class="right large_only"><a href="">Option 3</a></li>*/}
         <li class="right"><a href="">Log In</a></li>
         <li class="right"><a href="">Sign Up</a></li>
       </ul>

@@ -24,6 +24,7 @@ const Main = () => {
     const formData = new FormData(event.target);
     const favGenre = formData.get('fav_music_genre');
     const name = formData.get('name');
+    
     if (favGenre === 'Other' && !formData.get('custom_genre')) {
       alert('Please specify your genre');
       return;
