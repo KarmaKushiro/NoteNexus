@@ -1,6 +1,31 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import Parse from 'parse';
 
-const MainList = ({ users }) => {
+const MainList = () => {
+  const [users, setUsers] = useState([]);
+
+// Parsing from Back4App is Initiated 
+  useEffect(() => {
+    const fetchUsers = async () => {
+      const User = Parse.Object.extend('User');
+      const query = new Parse.Query(User);
+      try {
+        const results = await query.find();
+        const usersData = results.map(result => ({
+          id: result.id,
+          firstName: result.get('firstName'),
+          lastName: result.get('lastName'),
+          email: result.get('emailAddress')
+        }));
+        setUsers(usersData);
+      } catch (error) {
+        console.error('Error fetching users:', error);
+      }
+    };
+
+    fetchUsers();
+  }, []);
+
   return (
     <div>
       <hr />
@@ -9,12 +34,12 @@ const MainList = ({ users }) => {
         {users.length > 0 ? (
           users.map((user) => (
             <li key={user.id}>
-              {user.firstName} {user.lastName} | Contact:
-              <a href={`mailto:${user.email}`}>{user.email}</a>
+              {user.firstName} {user.lastName} | Contact: 
+                <a href={`mailto:${user.email}`}>{user.email}</a>
             </li>
           ))
         ) : (
-          <p>Error: Credentials cannot load.</p>
+          <p>No users available.</p>
         )}
       </ul>
     </div>
@@ -22,4 +47,5 @@ const MainList = ({ users }) => {
 };
 
 export default MainList;
+
 

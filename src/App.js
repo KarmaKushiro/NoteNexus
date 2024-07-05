@@ -1,7 +1,9 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Main from "./Components/Main/Main.js";
-import Header from "./Components/Header/Header.js";
+import Survey from "./Components/Survey/Survey.js";
+// import GenresList from "./Components/GenresList.js";
+// import SongsList from "./Components/SongsList.js";
 // import './App.css';
 import * as Env from "./environments.js";
 
@@ -17,6 +19,10 @@ const App = () => {
       <div className="App">
         <Routes>
           <Route path="/" element={<Main />} />
+          <Route path="/survey" element={<Survey />} />
+          {/*
+          <Route path="/genres" element={<GenresList />} />
+          <Route path="/songs" element={<SongsList />} />
           {/* Add more routes as needed */}
         </Routes>
       </div>

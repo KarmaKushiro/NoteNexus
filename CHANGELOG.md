@@ -8,14 +8,15 @@
 - Added `parse` initialization in `App.js` and `enviroemtns.js`.
 ### Added (JP)
 - File Structure/Organization
-- Transferring from HTML to React
-
+- Transferring from HTML to React for all files
+- Routing for Home and Header are added as well as `Navigation.js` which is intended for routing
+    - this routing will later be incorporated into the header bar as well as have its own page to function on
 
 ### Fixed
 - no longer calling for non existent css file in `index.html`.
 
-### Lasting Problems
-- 
+### Current Problems/Issues
+- Genres and Songs won't connect through routing
 
 ## [0.1.0] - 06-20-2024 - feature 3
 ### Added

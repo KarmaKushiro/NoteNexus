@@ -22,6 +22,8 @@ notenexus/
 │   │   ├── Survey/
 │   │   │   ├── Survey.js
 │   ├── Services/
+│   │   ├── genreModel.js
+│   │   ├── songModel.js
 │   │   ├── Users.js
 │   │   ├── users.json
 │   ├── App.js
