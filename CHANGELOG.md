@@ -18,6 +18,9 @@
 ### Current Problems/Issues
 - Genres and Songs won't connect through routing
 
+### Things in Progress
+- About, Login and Sign Up are in the works for the next feature
+
 ## [0.1.0] - 06-20-2024 - feature 3
 ### Added
 - Initial project creation.
