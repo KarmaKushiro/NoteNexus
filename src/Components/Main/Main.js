@@ -1,7 +1,7 @@
 import React, { useEffect, useState} from 'react';
 
 //Services
-import { getAllUsers } from "../../Services/Users";
+import { getAllUsers } from "../../Services/Users.js";
 import { getAllSongs } from "../../Services/songModel.js";
 import { getAllGenres } from "../../Services/genreModel.js";
 
@@ -12,8 +12,6 @@ import Header from "../Header/Header";
 import Survey from "../Survey/Survey";
 import SongsList from "../SongsList";
 import GenresList from '../GenresList';
-import Navigation from '../Navigation';
-
 
 const Main = () => {
   const [users, setUsers] = useState([]);
@@ -53,14 +51,11 @@ const Main = () => {
   return (
     <div>
       <Header />
-      <Navigation /> 
 
       <h1 className="centered-title">NoteNexus</h1>
-      <p>
-        <center>
+      <p className="centered-text">
           The perfect place to explore your favorite music genres and discover
           new ones!
-        </center>
       </p>
 
       {/* contains the survey */}

@@ -5,6 +5,10 @@
     font-size: 50px;
     margin-top: 10px;
 }
+.centered-text {
+    text-align: center;
+}
 body {
     background: #e3e3e3;
 }
+  
