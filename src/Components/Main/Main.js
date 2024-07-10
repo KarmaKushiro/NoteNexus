@@ -8,8 +8,7 @@ import { getAllGenres } from "../../Services/genreModel.js";
 //Componets
 import "./Main.css";
 import MainList from "./MainList";
-import Header from "../Header/Header";
-import Survey from "../Survey/Survey";
+import Survey from "../Survey/sampleSurvey.js";
 import SongsList from "../SongsList";
 import GenresList from '../GenresList';
 
@@ -50,7 +49,6 @@ const Main = () => {
 
   return (
     <div>
-      <Header />
 
       <h1 className="centered-title">NoteNexus</h1>
       <p className="centered-text">
@@ -59,6 +57,7 @@ const Main = () => {
       </p>
 
       {/* contains the survey */}
+      <h3> Music Survey Sample:</h3>
       <Survey onFormSubmit={handleSubmit} />
 
       <br /><br /><hr /><br />

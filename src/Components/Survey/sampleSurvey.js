@@ -17,8 +17,6 @@ const Survey = ({ onFormSubmit }) => {
 
   return (
     <div>
-      <h3>Music Survey:</h3>
-
       <p>What is your favorite genre of music?</p>
 
       {/* form that allows user to select one of four music choices */}
@@ -78,6 +76,7 @@ const Survey = ({ onFormSubmit }) => {
         {/* Form allows user to enter their name */}
         <p>What is your name?</p>
         <input
+          autoComplete='on'
           name="name"
           type="text"
           placeholder="Enter name here..."
