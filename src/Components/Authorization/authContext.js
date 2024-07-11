@@ -4,10 +4,12 @@ import Parse from 'parse';
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState(null); //creates variable that stores the current user
 
   useEffect(() => {
     const fetchUser = async () => {
+
+      //get user from parse and set if it exists
       const currentUser = Parse.User.current();
       if (currentUser) {
         setUser(currentUser);
@@ -17,6 +19,7 @@ export const AuthProvider = ({ children }) => {
     fetchUser();
   }, []);
 
+  //does logn 
   const login = async (username, password) => {
     try {
       const user = await Parse.User.logIn(username, password);
@@ -27,6 +30,7 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
+  //does logout
   const logout = async () => {
     try {
       await Parse.User.logOut();
@@ -37,8 +41,11 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
+  //does signup
   const signUp = async (username, password, email) => {
-    const user = new Parse.User();
+    const user = new Parse.User(); //makes user
+
+    //sets values
     user.set('username', username);
     user.set('password', password);
     user.set('email', email);

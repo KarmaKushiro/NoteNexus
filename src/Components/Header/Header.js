@@ -3,10 +3,9 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../Authorization/authContext';
 import './Header.css';
 
-
-//This file makes the header bar at the top of the screen 
+// This file makes the header bar at the top of the screen
 const Header = () => {
-  const { user, logout } = useAuth(); 
+  const { user, logout } = useAuth();
   const navigate = useNavigate();
 
   const handleLogout = async () => {
@@ -36,22 +35,23 @@ const Header = () => {
         {/*<li class="right large_only"><a href="">Option 1</a></li>
         <li class="right large_only"><a href="">Option 2</a></li>
         <li class="right large_only"><a href="">Option 3</a></li>*/}
-        <li className="right"><Link to="/signup">Sign Up</Link></li>
+
+        {/* Signup and Login appear when user is logged in, logout appears when user is logged into the program */}
         {user ? (
-            <>
-              <li className='right'>
-                <button className='logoutButton' onClick={handleLogout}>Logout</button>
-              </li>
-            </>
-          ) : (
-        <li className="right"><Link to="/login">Login</Link></li>
-          )}
+          <>
+            <li className='right'>
+              <button className='logoutButton' onClick={handleLogout}>Logout</button>
+            </li>
+          </>
+        ) : (
+          <>
+            <li className="right"><Link to="/signup">Sign Up</Link></li>
+            <li className="right"><Link to="/login">Login</Link></li>
+          </>
+        )}
       </ul>
     </div>
   );
 };
 
 export default Header;
-
-
-

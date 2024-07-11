@@ -5,6 +5,8 @@ const SignUp = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
+
+  //handles form when user hits the sighup button
   const handleSignUp = async (e) => {
     e.preventDefault();
     const user = new Parse.User();
@@ -20,6 +22,8 @@ const SignUp = () => {
     }
   };
 
+
+  //returns signup form
   return (
     <form onSubmit={handleSignUp}>
       <input

@@ -5,6 +5,7 @@ const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
+  //handles the login form
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
@@ -16,6 +17,7 @@ const Login = () => {
     }
   };
 
+  //returns login form
   return (
     <form onSubmit={handleLogin}>
       <input

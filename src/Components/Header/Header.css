@@ -13,6 +13,8 @@
   display: block;
   padding: 1em;
   color: white;
+  font-family: inherit; /* Ensure the same font family */
+  font-size: 16px; /* Ensure the same font size */
 }
 .top_nav_bar a:hover {
   background: #455d7a;
@@ -21,21 +23,21 @@
 .logoutButton {
   background-color: #233142;  /* Match header link background color */
   color: white;  /* Match header link text color */
-  padding: 10px 20px;
+  padding: 1em; /* Match padding with other links */
   border: none;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
+  font-size: 16px; /* Match font size */
   cursor: pointer;
-  border-radius: 4px;
+  border-radius: 0; /* Match border radius with other links */
+  font-family: inherit; /* Ensure the same font family */
 }
 
 .logoutButton:hover {
   background-color: #455d7a;  /* Match header hover background color */
 }
-  
+
 @media all and (min-width: 801px) {
   .left {
     margin-right: auto;
@@ -45,7 +47,7 @@
   }
 }
   
-/* style for meduim screen */
+/* style for medium screen */
 @media all and (max-width: 800px) {
   .top_nav_bar {
     flex-flow: row nowrap;

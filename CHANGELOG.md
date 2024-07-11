@@ -1,20 +1,13 @@
 # Changelog
 ## [0.3.0] - 07-10-2024 - feature 5
-### Added (JP)
+### Added
 - Created `ProtectedRoute.js` which protects the use of the full Survey 
 - Coded `login.js` and `signup.js` for authorization 
-
-### Added (Grant)
-- 
-
-### Fixes
--
-
-### Issues
--
+- Made AuthRedirectRoute to handle redirect for authenticated user
 
 ### Progress Report
--
+- Basic authentication and route protection are now functional
+- Addition of login, signup, and logout 
 
 ## [0.2.0] - 07-01-2024 - feature 4 
 ### Added (Grant)
