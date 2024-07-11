@@ -17,7 +17,7 @@ const MainList = () => {
           lastName: result.get('lastName'),
           email: result.get('emailAddress')
         }));
-        setUsers(usersData);
+        setUsers(usersData.slice(0, 2)); // Limit to first two users (Grant and JP)
       } catch (error) {
         console.error('Error fetching users:', error);
       }
