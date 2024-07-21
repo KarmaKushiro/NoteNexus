@@ -32,8 +32,8 @@ const Header = () => {
         <li className="left"><Link to="/">Home</Link></li>
         <li className="right"><Link to="/about">About</Link></li>
         <li className='right'><Link to="/survey" onClick={handleSurveyClick}>Survey</Link></li>
-        {/*<li class="right large_only"><a href="">Option 1</a></li>
-        <li class="right large_only"><a href="">Option 2</a></li>
+        <li className="right"><Link to="/songs">Songs</Link></li> {/* MAKE SURE TO ADD LINK HERE*/}
+        {/*<li class="right large_only"><a href="">Option 2</a></li>
         <li class="right large_only"><a href="">Option 3</a></li>*/}
 
         {/* Signup and Login appear when user is logged in, logout appears when user is logged into the program */}
