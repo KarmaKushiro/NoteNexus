@@ -11,6 +11,7 @@ import Parse from "parse";
 import Header from "./Components/Header/Header.js";
 import { AuthProvider, useAuth } from "./Components/Authorization/authContext.js";
 import Songs from "./Components/Songs/Songs.js";
+import SongDetail from "./Components/SongDetail/SongDetail.js"; 
 import { getAllSongs } from "./Services/songModel.js";
 
 
@@ -44,6 +45,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Main />} />
             <Route path="/songs" element={<Songs songs={songs} />} />
+            <Route path="/song/:id" element={<SongDetail />} /> 
             <Route path="/survey" element={<ProtectedRoute component={Survey} />} />
             <Route path="/about" element={<About />} />
             <Route path="/signup" element={<AuthRedirectRoute element={<SignUp />} />} />
