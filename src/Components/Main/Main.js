@@ -56,6 +56,7 @@ const Main = () => {
           new ones!
       </p>
 
+      {/*
       {/* contains the survey */}
       <h3> Music Survey Sample:</h3>
       <Survey onFormSubmit={handleSubmit} />
@@ -68,6 +69,7 @@ const Main = () => {
       
       <h3>Songs</h3>
       <SongsList songs={songs} />
+      
 
       <footer>
       {/* This is the website credits */}

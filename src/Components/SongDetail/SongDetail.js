@@ -32,15 +32,21 @@ const SongDetail = () => {
   //need to change release date variable type. saftey checks are to prevent the website from breaking
   const releaseDate = song.get('ReleaseDate') ? new Date(song.get('ReleaseDate')).toLocaleDateString() : 'Unknown';
   const genreName = genre ? genre.get('Name') : 'Unknown';
+  const songImage = song.get('ImageURL');
 
   //formating for song detail
   return (
     <div className="song-detail">
-      <h1>{song.get('Title')}</h1>
-      <p>Artist: {song.get('Artist')}</p>
-      <p>Release Date: {releaseDate}</p>
-      <p>Album: {song.get('Album')}</p>
-      <p>Genre: {genreName}</p>
+      <h2 className="artist-name">{song.get('Artist')}</h2>
+      <div className="song-info">
+        <h1>{song.get('Title')}</h1>
+        <p>Release Date: {releaseDate}</p>
+        <p>Album: {song.get('Album')}</p>
+        <p>Genre: {genreName}</p>
+      </div>
+      <div className="song-image">
+        <img src={songImage} alt={song.get('Title')} />
+      </div>
     </div>
   );
 };
