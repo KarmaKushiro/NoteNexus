@@ -8,39 +8,31 @@ const SongDetail = () => {
   const [song, setSong] = useState(null);
   const [genre, setGenre] = useState(null);
 
+  //function fetches specfic song data by ID
   useEffect(() => {
     const fetchSong = async () => {
       const songData = await getSongById(id);
       setSong(songData);
       
-      const genrePointer = songData.get('Genre');
-      if (genrePointer) {
+      const genrePointer = songData?.get('Genre');
+
         const genreData = await getGenreById(genrePointer.id);
         setGenre(genreData);
-      }
+
     };
 
     fetchSong();
   }, [id]);
 
   if (!song) {
-    return <div>Loading...</div>;
+    return <div>My Code is not working agiaiN!</div>;
   }
 
-  let releaseDate;
-  if (song.get('ReleaseDate')) {
-    releaseDate = new Date(song.get('ReleaseDate')).toLocaleDateString();
-  } else {
-    releaseDate = 'Unknown';
-  }
+  //need to change release date variable type. saftey checks are to prevent the website from breaking
+  const releaseDate = song.get('ReleaseDate') ? new Date(song.get('ReleaseDate')).toLocaleDateString() : 'Unknown';
+  const genreName = genre ? genre.get('Name') : 'Unknown';
 
-  let genreName;
-  if (genre) {
-    genreName = genre.get('Name');
-  } else {
-    genreName = 'Unknown';
-  }
-
+  //formating for song detail
   return (
     <div>
       <h1>{song.get('Title')}</h1>
