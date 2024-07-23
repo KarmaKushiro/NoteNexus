@@ -12,6 +12,23 @@ import Survey from "../Survey/sampleSurvey.js";
 import SongsList from "../SongsList";
 import GenresList from '../GenresList';
 
+//MaterialUI  masonry components 
+import Box from '@mui/material/Box';
+import Paper from '@mui/material/Paper';
+import Masonry from '@mui/lab/Masonry';
+import { styled } from '@mui/material/styles';
+
+//styling for the masonry
+const Label = styled(Paper)(({ theme }) => ({
+  backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
+  ...theme.typography.body2,
+  padding: theme.spacing(0.5),
+  textAlign: 'center',
+  color: theme.palette.text.secondary,
+  borderBottomLeftRadius: 0,
+  borderBottomRightRadius: 0,
+}));
+
 const Main = () => {
   const [users, setUsers] = useState([]);
   // expand useEffect to include songs amnd genres and do it asyncly
@@ -47,6 +64,12 @@ const Main = () => {
     alert(`${name}'s Favorite Music Genre Is "${finalGenre}"`);
   };
 
+    //gets images for Masonry from database
+    const itemData = songs.map(song => ({
+      img: song.get('ImageURL'),
+      title: song.get('Title')
+    }));
+
   return (
     <div>
 
@@ -56,8 +79,36 @@ const Main = () => {
           new ones!
       </p>
 
-      {/*
-      {/* contains the survey */}
+      <hr/>
+
+      {/* Masonry layout for artist images */}
+      <Box sx={{ width: '80%', minHeight: 829, margin: 'auto' }}>
+        <Masonry columns={6} spacing={1}>
+          {itemData.map((item, index) => (
+            <div key={index}>
+              <img
+                srcSet={`${item.img}?w=120&auto=format&dpr=2 2x`}
+                src={`${item.img}?w=120&auto=format`}
+                alt={item.title}
+                loading="lazy"
+                style={{
+                  borderBottomLeftRadius: 4,
+                  borderBottomRightRadius: 4,
+                  display: 'block',
+                  width: '100%',
+                  height: 'auto',
+                }}
+              />
+            </div>
+          ))}
+        </Masonry>
+      </Box>
+
+      {/* the white space below the images would be filled byother artists as new songs are added */}
+  
+      {/* old main formatting
+      
+      contains the survey 
       <h3> Music Survey Sample:</h3>
       <Survey onFormSubmit={handleSubmit} />
 
@@ -69,7 +120,7 @@ const Main = () => {
       
       <h3>Songs</h3>
       <SongsList songs={songs} />
-      
+      */}
 
       <footer>
       {/* This is the website credits */}

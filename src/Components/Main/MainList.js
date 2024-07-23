@@ -33,10 +33,10 @@ const MainList = () => {
       <ul>
         {users.length > 0 ? (
           users.map((user) => (
-            <li key={user.id}>
+            <p key={user.id}>
               {user.firstName} {user.lastName} | Contact: 
                 <a href={`mailto:${user.email}`}>{user.email}</a>
-            </li>
+            </p>
           ))
         ) : (
           <p>No users available.</p>
