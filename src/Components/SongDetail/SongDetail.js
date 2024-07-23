@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getSongById } from '../../Services/songModel';
 import { getGenreById } from '../../Services/genreModel';
+import './SongDetail.css';
 
 const SongDetail = () => {
   const { id } = useParams();
@@ -14,10 +15,10 @@ const SongDetail = () => {
       const songData = await getSongById(id);
       setSong(songData);
       
+      //gets the genre for the specfic song
       const genrePointer = songData?.get('Genre');
-
-        const genreData = await getGenreById(genrePointer.id);
-        setGenre(genreData);
+      const genreData = await getGenreById(genrePointer.id);
+      setGenre(genreData);
 
     };
 
@@ -34,7 +35,7 @@ const SongDetail = () => {
 
   //formating for song detail
   return (
-    <div>
+    <div className="song-detail">
       <h1>{song.get('Title')}</h1>
       <p>Artist: {song.get('Artist')}</p>
       <p>Release Date: {releaseDate}</p>

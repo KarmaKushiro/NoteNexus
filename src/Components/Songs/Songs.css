@@ -1,0 +1,71 @@
+/*container for the songs section*/
+.songs-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+    color: #444;
+}
+
+/*container for genre filter componet*/
+.autocomplete-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.songs-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+/* Table borders */
+.songs-table th, .songs-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+/* Top row of table */
+.songs-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+/* Alternating row colors */
+.songs-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Hover effect for all rows */
+.songs-table tr:hover,
+.songs-table tr:nth-child(even):hover {
+    background-color: #d2d2eb !important;
+}
+
+/*style for horizontal line*/
+hr {
+    border: none;
+    height: 1px;
+    background-color: #ddd;
+    margin: 20px 0;
+}
+
+p {
+    font-size: 1.1em;
+    margin: 10px 0;
+}
+
+/*styling for the links*/
+a {
+    color: #007bff;
+    text-decoration: none;
+} a:hover {
+    text-decoration: underline;
+}

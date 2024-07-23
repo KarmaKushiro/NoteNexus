@@ -1,0 +1,26 @@
+.song-detail {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 600px;
+    margin: 50px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  }
+  
+  .song-detail h1 {
+    font-size: 2.5em;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .song-detail p {
+    font-size: 1.2em;
+    color: #555;
+    margin: 10px 0;
+  }
+  
+  .song-detail p span {
+    font-weight: bold;
+  }
+  
