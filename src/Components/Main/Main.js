@@ -106,7 +106,7 @@ const Main = () => {
 
       {/* the white space below the images would be filled byother artists as new songs are added */}
   
-      {/* old main formatting
+      {/* old main
       
       contains the survey 
       <h3> Music Survey Sample:</h3>
