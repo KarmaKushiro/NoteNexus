@@ -14,18 +14,15 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { Login } from '@mui/icons-material';
 import { useAuth } from '../authContext';
-
 
 function Copyright(props) {
   return (
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
       {'Copyright © '}
-      <RouterLink to='/'>
-      <Link to="/" color="inherit">
+      <Link component={RouterLink} to="/" color="inherit">
         NoteNexus
-      </Link></RouterLink>{' '}
+      </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
     </Typography>
@@ -44,7 +41,7 @@ const SignUp = () => {
   const navigate = useNavigate();
   const { setUser } = useAuth();
 
-  //handles form when user hits the sighup button
+  //handles form when user hits the signup button
   const handleSignUp = async (e) => {
     e.preventDefault();
     const user = new Parse.User();
@@ -63,9 +60,8 @@ const SignUp = () => {
     } catch (error) {
       console.error('Error signing up:', error);
       setError('Error signing up: ' + error.message);
-      }
-    };
-
+    }
+  };
 
   //returns signup form
   return (
@@ -98,7 +94,7 @@ const SignUp = () => {
                   label="First Name"
                   autoFocus
                   value={firstName}
-                  onChange = {(e) => setFirstName(e.target.value)}
+                  onChange={(e) => setFirstName(e.target.value)}
                 />
               </Grid>
               <Grid item xs={12} sm={6}>
@@ -110,8 +106,7 @@ const SignUp = () => {
                   name="lastName"
                   autoComplete="family-name"
                   value={lastName}
-                  onChange = {(e) => setLastName(e.target.value)}
-
+                  onChange={(e) => setLastName(e.target.value)}
                 />
               </Grid>
               <Grid item xs={12}>
@@ -124,7 +119,7 @@ const SignUp = () => {
                   autoComplete="username"
                   autoFocus
                   value={username}
-                  onChange = {(e) => setUsername(e.target.value)}
+                  onChange={(e) => setUsername(e.target.value)}
                 />
               </Grid>
               <Grid item xs={12}>
@@ -136,7 +131,7 @@ const SignUp = () => {
                   name="email"
                   autoComplete="email"
                   value={email}
-                  onChange = {(e) => setEmail(e.target.value)}
+                  onChange={(e) => setEmail(e.target.value)}
                 />
               </Grid>
               <Grid item xs={12}>
@@ -149,7 +144,7 @@ const SignUp = () => {
                   id="password"
                   autoComplete="new-password"
                   value={password}
-                  onChange = {(e) => setPassword(e.target.value)}
+                  onChange={(e) => setPassword(e.target.value)}
                 />
               </Grid>
             </Grid>
@@ -168,7 +163,7 @@ const SignUp = () => {
             </Button>
             <Grid container justifyContent="flex-end">
               <Grid item>
-                <Link href="/login" variant="body2">
+                <Link component={RouterLink} to="/login" variant="body2">
                   Already have an account? Sign in
                 </Link>
               </Grid>

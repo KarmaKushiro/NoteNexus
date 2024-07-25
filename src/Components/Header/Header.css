@@ -1,3 +1,10 @@
+/* Reset default margin and padding for body and html */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
 /* top_nav_bar */
 .top_nav_bar {
   display: flex;
@@ -6,7 +13,7 @@
   list-style: none;
   margin: 0;
   padding: 0;
-  background: #233142;          
+  background: #233142;
 }
 .top_nav_bar a {
   text-decoration: none;

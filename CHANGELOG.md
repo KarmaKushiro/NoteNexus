@@ -1,8 +1,12 @@
 # Changelog
 ## [0.4.0] - 07-23-2024 - feature 6
-### Added (JP)
+### Added
 - Created `dashboard.js` which allows the user basic access to a dashboard with details on them
 - Added Material UI library to update and stylize the header and app as a whole
+- Created `songs.js` to display list of songs
+- Created `SongDetail.js` to showcase any indvidual song
+- Added filtering by musical genre for songs 
+
 
 ## [0.3.0] - 07-10-2024 - feature 5
 ### Added
